@@ -11,7 +11,7 @@ class Player{
         this.wins=0;
         this.inPenaltyBox=false;
     }
-    public void increaseWins(){
+    public void incrementWin(){
         wins++;
     }
     public void newLocation(int dice){

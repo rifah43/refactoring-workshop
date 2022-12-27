@@ -1,7 +1,7 @@
 package workshop;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
+
 public class TriviaGame {
     ArrayList<Player> players = new ArrayList<Player>();
     Question question =new Question();
@@ -20,15 +20,15 @@ public class TriviaGame {
         players.add(player);
         return true;
     }
-    private void roll(int dice) {
-        announce(players.get(currentPlayer).getPlayerName() + " is the current player");
-        announce("They have rolled a " + dice);
+    private void rollDice(int dice) {
+        announceMessage(players.get(currentPlayer).getPlayerName() + " is the current player");
+        announceMessage("They have rolled a " + dice);
         if (players.get(currentPlayer).isInPenaltyBox()) {
             if (dice % 2 != 0) {
                 isOutOfPenaltyBox =true;
                 changeLocationAndAskQuestion(dice);
             }else {
-                announce(players.get(currentPlayer).getPlayerName() + " is not getting out of the penalty box");
+                announceMessage(players.get(currentPlayer).getPlayerName() + " is not getting out of the penalty box");
                 isOutOfPenaltyBox =false;
             }
         } else {
@@ -37,11 +37,11 @@ public class TriviaGame {
     }
     public void changeLocationAndAskQuestion(int dice){
         players.get(currentPlayer).newLocation(dice);
-        announce(players.get(currentPlayer).getPlayerName()
+        announceMessage(players.get(currentPlayer).getPlayerName()
                 + "'s new location is "
                 + players.get(currentPlayer).getPlace());
-        announce("The category is " + players.get(currentPlayer).getCurrentCategory());
-        announce(question.askQuestion(players.get(currentPlayer)));
+        announceMessage("The category is " + players.get(currentPlayer).getCurrentCategory());
+        announceMessage(question.askQuestion(players.get(currentPlayer)));
     }
     public boolean rightAnswered() {
         if (players.get(currentPlayer).isInPenaltyBox()) {
@@ -56,9 +56,9 @@ public class TriviaGame {
         }
     }
     public boolean addPointsAndReturnWinner(){
-        announce("Answer was correct!!!!");
-        players.get(currentPlayer).increaseWins();
-        announce(players.get(currentPlayer)
+        announceMessage("Answer was correct!!!!");
+        players.get(currentPlayer).incrementWin();
+        announceMessage(players.get(currentPlayer)
                 + " now has "
                 + players.get(currentPlayer).getNumberOfWins()
                 + " Gold Coins.");
@@ -67,8 +67,8 @@ public class TriviaGame {
         return winner;
     }
     public boolean wrongAnswer() {
-        announce("Question was incorrectly answered");
-        announce(players.get(currentPlayer) + " was sent to the penalty box");
+        announceMessage("Question was incorrectly answered");
+        announceMessage(players.get(currentPlayer) + " was sent to the penalty box");
         players.get(currentPlayer).setPositionInsidePenaltyBox(true);
         nextPlayerTurn();
         return true;
@@ -82,7 +82,7 @@ public class TriviaGame {
         return !(players.get(currentPlayer).getNumberOfWins()== 6);
     }
 
-    protected void announce(Object message) {
+    protected void announceMessage(Object message) {
         System.out.println(message);
     }
 }
