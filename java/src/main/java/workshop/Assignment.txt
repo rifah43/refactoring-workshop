@@ -2,8 +2,10 @@
 
 A. Code Smell: Unnecessary variable.
    Solution : I removed the string variable.
+   
 B. Code Smell: Inappropriate naming smell 
    Solution : I replaced the method names with appropriate name
+   
 C. Code Smell: Extract method.
    Solution : I extracted conditions in a method.
    
@@ -11,6 +13,7 @@ C. Code Smell: Extract method.
 
 A. Code Smell : Long Method smell
    Solution : I extracted method to convertToCode().
+   
 B. Comment Smell
    Solution: Removed comment with appropriate naming.
 
@@ -18,8 +21,12 @@ B. Comment Smell
 
 A. Code Smell : Large class smell
    Solution: I splitted the class TriviaGame into Question class, Player class and Triviagame Class.
-
+   
 B. Code Smell: Odd ball smell
    Solution: I omitted the method.
+   
 C. Code Smell: Inappropriate naming smell
    Solution : I replaced the method names with appropriate name
+   
+D. Code Smell : Long Method smell
+   Solution : I extracted rollDice() method to multiple method.
