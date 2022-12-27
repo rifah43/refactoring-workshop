@@ -66,7 +66,7 @@ public class TriviaGame {
         nextPlayerTurn();
         return winner;
     }
-    public boolean wrongAnswer() {
+    public boolean isWrongAnswer() {
         announceMessage("Question was incorrectly answered");
         announceMessage(players.get(currentPlayer) + " was sent to the penalty box");
         players.get(currentPlayer).setPositionInsidePenaltyBox(true);
