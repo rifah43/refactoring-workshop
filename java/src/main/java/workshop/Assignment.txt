@@ -1,12 +1,12 @@
 1. FizzBuzz
 
-A. Code Smell: Unnecessary variable.
+A. Code Smell: Unnecessary variable
    Solution : I removed the string variable.
    
 B. Code Smell: Inappropriate naming smell 
    Solution : I replaced the method names with appropriate name
    
-C. Code Smell: Extract method.
+C. Code Smell: Long method smell
    Solution : I extracted conditions in a method.
 
 D. Comment Smell
@@ -17,8 +17,11 @@ D. Comment Smell
 A. Code Smell : Long Method smell
    Solution : I extracted method to convertToCode().
    
-B. Comment Smell
+B. Code Smell: Comment Smell
    Solution: Removed comment with appropriate naming.
+   
+C. Code Smell: Inappropriate naming smell
+   Solution: I replaced the names with appropriate name
 
 3.TriviaGame
 
@@ -33,3 +36,6 @@ C. Code Smell: Inappropriate naming smell
    
 D. Code Smell : Long Method smell
    Solution : I extracted rollDice() method to multiple method.
+   
+E. Code Smell: Duplicate code
+   Solution: I made method to prevent duplicate code and used it.
