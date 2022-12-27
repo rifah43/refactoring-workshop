@@ -8,6 +8,9 @@ B. Code Smell: Inappropriate naming smell
    
 C. Code Smell: Extract method.
    Solution : I extracted conditions in a method.
+
+D. Comment Smell
+   Solution: Removed comment with appropriate naming.
    
 2. plaintextToHtml
 
