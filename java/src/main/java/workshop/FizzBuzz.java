@@ -1,3 +1,4 @@
+package workshop;
 public class FizzBuzz {
     public static boolean isBuzz(int number)
     {

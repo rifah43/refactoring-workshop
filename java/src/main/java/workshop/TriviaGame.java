@@ -6,13 +6,16 @@ public class TriviaGame {
     ArrayList<Player> players = new ArrayList<Player>();
     Question question =new Question();
     int currentPlayer = 0;
-    private boolean isOutOfPenaltyBox;
+    private boolean isGettingOutOfPenaltyBox;
 
     public TriviaGame() {
         question.addQuestion();
     }
+    public int playerNumber() {
+        return players.size();
+    }
     private boolean isPlayable() {
-        return (players.size() >= 2);
+        return (playerNumber() >= 2);
     }
 
     private boolean addPlayer(String playerName) {
@@ -25,17 +28,17 @@ public class TriviaGame {
         announceMessage("They have rolled a " + dice);
         if (players.get(currentPlayer).isInPenaltyBox()) {
             if (dice % 2 != 0) {
-                isOutOfPenaltyBox =true;
-                changeLocationAndAskQuestion(dice);
+                isGettingOutOfPenaltyBox =true;
+                outsidePenaltyBoxAndAskQuestion(dice);
             }else {
                 announceMessage(players.get(currentPlayer).getPlayerName() + " is not getting out of the penalty box");
-                isOutOfPenaltyBox =false;
+                isGettingOutOfPenaltyBox =false;
             }
         } else {
-            changeLocationAndAskQuestion(dice);
+            outsidePenaltyBoxAndAskQuestion(dice);
         }
     }
-    public void changeLocationAndAskQuestion(int dice){
+    public void outsidePenaltyBoxAndAskQuestion(int dice){
         players.get(currentPlayer).newLocation(dice);
         announceMessage(players.get(currentPlayer).getPlayerName()
                 + "'s new location is "
@@ -43,9 +46,9 @@ public class TriviaGame {
         announceMessage("The category is " + players.get(currentPlayer).getCurrentCategory());
         announceMessage(question.askQuestion(players.get(currentPlayer)));
     }
-    public boolean rightAnswered() {
+    public boolean isCorrectAnswered() {
         if (players.get(currentPlayer).isInPenaltyBox()) {
-            if (isOutOfPenaltyBox) {
+            if (isGettingOutOfPenaltyBox) {
                 return addPointsAndReturnWinner();
             } else {
                 nextPlayerTurn();

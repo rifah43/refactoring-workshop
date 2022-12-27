@@ -20,7 +20,6 @@ class Player{
         {
             places= places - 12;
         }
-
     }
     public String getCurrentCategory() {
         if (places%4 == 0) return "Pop";

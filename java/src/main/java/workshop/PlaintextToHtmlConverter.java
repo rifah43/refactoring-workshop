@@ -22,18 +22,17 @@ public class PlaintextToHtmlConverter {
     }
 
     private String basicHtmlEncode(String source) {
-        i = 0;
         result = new ArrayList<>();
         convertedLine = new ArrayList<>();
         convertToCode(source);
         addANewLine();
-        String finalResult = String.join("<br />", result);
-        return finalResult;
+        return String.join("<br />", result);
     }
     public void convertToCode(String source)
     {
         this.source = source;
         i=0;
+        characterToConvert= String.valueOf(source.charAt(i));
         while (i <= this.source.length()) {
             switch (characterToConvert) {
                 case "<":
@@ -49,9 +48,9 @@ public class PlaintextToHtmlConverter {
                     addANewLine();
                     break;
                 default:
-                    convertedLine.add(characterToConvert);;
+                    addCharacterToConvert();
             }
-            characterToConvert= String.valueOf(source.charAt(i));
+            characterToConvert= collectCharacterAndIncrementPointer();
             i++;
         }
     }
@@ -65,7 +64,7 @@ public class PlaintextToHtmlConverter {
         result.add(line);
         convertedLine = new ArrayList<>();
     }
-    private void pushACharacterToTheOutput() {
+    private void addCharacterToConvert() {
         convertedLine.add(characterToConvert);
     }
 }
