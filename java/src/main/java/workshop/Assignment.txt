@@ -26,7 +26,7 @@ A. Code Smell : Large class smell
    Solution: I splitted the class TriviaGame into Question class, Player class and Triviagame Class.
    
 B. Code Smell: Odd ball smell
-   Solution: I omitted the method.
+   Solution: I omitted the method createRockQuestion().
    
 C. Code Smell: Inappropriate naming smell
    Solution : I replaced the method names with appropriate name
