@@ -1,0 +1,25 @@
+1. FizzBuzz
+
+A. Code Smell: Unnecessary variable.
+   Solution : I removed the string variable.
+B. Code Smell: Inappropriate naming smell 
+   Solution : I replaced the method names with appropriate name
+C. Code Smell: Extract method.
+   Solution : I extracted conditions in a method.
+   
+2. plaintextToHtml
+
+A. Code Smell : Long Method smell
+   Solution : I extracted method to convertToCode().
+B. Comment Smell
+   Solution: Removed comment with appropriate naming.
+
+3.TriviaGame
+
+A. Code Smell : Large class smell
+   Solution: I splitted the class TriviaGame into Question class, Player class and Triviagame Class.
+
+B. Code Smell: Odd ball smell
+   Solution: I omitted the method.
+C. Code Smell: Inappropriate naming smell
+   Solution : I replaced the method names with appropriate name
