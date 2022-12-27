@@ -2,7 +2,7 @@ package workshop;
 public class FizzBuzz {
     public static boolean isBuzz(int number)
     {
-        if(number%3==0) {
+        if(number%5==0) {
             return true;
         }
         return false;
